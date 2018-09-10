@@ -1,3 +1,18 @@
-<p>
-  login works!
-</p>
+<div class="container">
+        <div class="jumbotron">
+            <h1>Login</h1>
+        </div>
+        <form>
+            <div class="form-group">
+                <label>Username</label>
+                <input class="form-control" placeholder="Username" [(ngModel)]="user.username" name="username">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" placeholder="Password" [(ngModel)]="user.password" name="password">
+            </div>
+            <div class="mx-auto text-center">
+                <button type="submit" class="btn btn-primary" (click)="onSubmit()">Login</button>
+            </div>
+        </form>
+    </div>

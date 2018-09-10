@@ -4,3 +4,8 @@ export interface User {
     email: String,
     username: String
 }
+
+export interface UserAuth {
+    username: String,
+    password: String
+}
