@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import * as fromAuth from '../../../stores/reducers';
+import * as AuthActions from '../../../stores/actions/auth';
 import { UserAuth } from '../../../User';
 import { AuthService } from '../../services/auth.service';
 
@@ -13,12 +17,18 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
-  constructor(private authService: AuthService) {}
+  constructor(
+      private authService: AuthService,
+      private router: Router,
+      private store: Store<fromAuth.AuthState>
+      ) {}
 
   ngOnInit() {}
 
   onSubmit() {
-      this.authService.login(this.user)
-        .subscribe(response => console.log(response))
+    this.authService.login(this.user).subscribe(response => {
+        this.store.dispatch(new AuthActions.Login(response.token))
+      this.router.navigate(['/home']);
+    });
   }
 }

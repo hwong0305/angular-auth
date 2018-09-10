@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import * as fromAuth from '../../../stores/reducers';
+import * as AuthActions from '../../../stores/actions/auth';    
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<fromAuth.AuthState>) { }
+
+  loggedIn$: boolean;
 
   ngOnInit() {
+      this.store.pipe(select(fromAuth.selectLoggedIn))
+        .subscribe(
+            response => this.loggedIn$ = response
+        )
   }
 
 }

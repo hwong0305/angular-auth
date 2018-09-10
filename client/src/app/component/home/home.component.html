@@ -1,4 +1,7 @@
 <app-dashboard></app-dashboard>
-<p>
-  home works!
-</p>
+<div *ngIf="loggedIn$">
+    <p>Logged In</p>
+</div>
+<div *ngIf="!loggedIn$">
+    <p>Not Logged In</p>
+</div>

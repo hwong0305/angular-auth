@@ -6,7 +6,8 @@
     </div>
     <div class="navbar-right btn-group">
         <a routerLink="/home" class="btn btn-outline-light" routerLinkActive="active">Home</a>
-        <a routerLink="/register" class="btn btn-outline-light" routerLinkActive="active">Register</a>
-        <a routerLink="/login" class="btn btn-outline-light" routerLinkActive="active">Login</a>
+        <a *ngIf="!loggedIn$" routerLink="/register" class="btn btn-outline-light" routerLinkActive="active">Register</a>
+        <a *ngIf="!loggedIn$" routerLink="/login" class="btn btn-outline-light" routerLinkActive="active">Login</a>
+        <button *ngIf="loggedIn$" (click)="logout()" class="btn btn-outline-light">Logout</button>
     </div>
 </div>

@@ -9,6 +9,11 @@ const httpOptions = {
     })
 };
 
+interface Authenticate {
+    user: User;
+    token: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,11 +21,11 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  register(user:User): Observable<User> {
-      return this.http.post<User>('http://localhost:8081/users/register', user, httpOptions)
+  register(user:User): Observable<Authenticate> {
+      return this.http.post<Authenticate>('http://localhost:8081/users/register', user, httpOptions)
   }
 
-  login(user:UserAuth): Observable<User> {
-      return this.http.post<User>('http://localhost:8081/users/login', user, httpOptions)
+  login(user:UserAuth): Observable<Authenticate> {
+      return this.http.post<Authenticate>('http://localhost:8081/users/login', user, httpOptions)
   }
 }
