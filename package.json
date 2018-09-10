@@ -1,0 +1,24 @@
+{
+  "name": "meanauthapp",
+  "version": "1.0.0",
+  "description": "An Auth app using MEAN stack",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "server": "nodemon app"
+  },
+  "author": "Herman Wong",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.2.14",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
