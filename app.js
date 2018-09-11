@@ -15,6 +15,8 @@ mongoose.connect(config.mongoURI);
 // Setting up the Static path for future builds
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/users', user);
+
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'));
 })
@@ -25,6 +27,5 @@ db.once('open', () => console.log('Now connected to MongoDB'));
 
 const port = process.env.PORT || 8081;
 
-app.use('/users', user);
 
 app.listen(port, () => console.log(`Now listening on Port ${port}`));
