@@ -15,6 +15,9 @@ mongoose.connect(config.mongoURI);
 // Setting up the Static path for future builds
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
+})
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Error:'));
