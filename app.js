@@ -1,8 +1,6 @@
 const express = require('express');
 const path = require('path');
-const cors = require('cors');
 const bodyParser = require('body-parser');
-const morgan = require('morgan');
 const mongoose = require('mongoose');
 const config = require('./config/database');
 const user = require('./routes');
@@ -17,8 +15,6 @@ mongoose.connect(config.mongoURI);
 // Setting up the Static path for future builds
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(cors());
-app.use(morgan('combined'));
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Error:'));

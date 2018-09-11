@@ -15,6 +15,6 @@ export class ProfileService {
       }
     };
 
-    return this.http.get('http://localhost:8081/users/validate', httpOptions);
+    return this.http.get('users/validate', httpOptions);
   }
 }

@@ -600,10 +600,10 @@ var AuthService = /** @class */ (function () {
         this.http = http;
     }
     AuthService.prototype.register = function (user) {
-        return this.http.post('http://localhost:8081/users/register', user, httpOptions);
+        return this.http.post('users/register', user, httpOptions);
     };
     AuthService.prototype.login = function (user) {
-        return this.http.post('http://localhost:8081/users/login', user, httpOptions);
+        return this.http.post('users/login', user, httpOptions);
     };
     AuthService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -715,7 +715,7 @@ var ProfileService = /** @class */ (function () {
                 authorization: token
             }
         };
-        return this.http.get('http://localhost:8081/users/validate', httpOptions);
+        return this.http.get('users/validate', httpOptions);
     };
     ProfileService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({

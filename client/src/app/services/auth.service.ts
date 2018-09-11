@@ -22,10 +22,10 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   register(user:User): Observable<Authenticate> {
-      return this.http.post<Authenticate>('http://localhost:8081/users/register', user, httpOptions)
+      return this.http.post<Authenticate>('users/register', user, httpOptions)
   }
 
   login(user:UserAuth): Observable<Authenticate> {
-      return this.http.post<Authenticate>('http://localhost:8081/users/login', user, httpOptions)
+      return this.http.post<Authenticate>('users/login', user, httpOptions)
   }
 }
