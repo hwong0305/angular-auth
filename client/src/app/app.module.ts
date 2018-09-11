@@ -14,11 +14,14 @@ import { LoginComponent } from './component/login/login.component';
 import { HomeComponent } from './component/home/home.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 
+import { AuthguardService } from './services/authguard.service';
+
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent }
+    { path: 'register', component: RegisterComponent },
+    { path: 'dashboard', component: DashboardComponent, canActivate:[AuthguardService]}
 ]
 
 @NgModule({
@@ -37,7 +40,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     StoreModule.forRoot(reducers)
   ],
-  providers: [],
+  providers: [AuthguardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

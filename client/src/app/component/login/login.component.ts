@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.authService.login(this.user).subscribe(response => {
         this.store.dispatch(new AuthActions.Login(response.token))
-      this.router.navigate(['/home']);
+      this.router.navigate(['/dashboard']);
     });
   }
 }
