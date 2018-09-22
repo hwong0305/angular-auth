@@ -901,7 +901,7 @@ var selectToken = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createSelecto
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/sfwong445/Projects/meanauthapp/client/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/sfwong445/Projects/angular-auth/client/src/main.ts */"./src/main.ts");
 
 
 /***/ })
