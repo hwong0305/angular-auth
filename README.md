@@ -38,6 +38,10 @@ This application allows the users to:
 
 ![Register](screenshots/register.png 'Register')
 
+## Dashboard
+
+![Dashboard](screenshots/dashboard.png 'Dashboard')
+
 ## Demonstration
 
 It has been deployed to [Heroku](https://mysterious-falls-14943.herokuapp.com/).
