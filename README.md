@@ -5,7 +5,7 @@ A simple application that lets user registered and sign in. The purpose of this 
 ## Table of Contents
 
 1. [Functionality](#Functionality)
-2. [Techonoglies](#Technologies-Used)
+2. [Technologies](#Technologies-Used)
 3. [Screenshots](#Screenshots)
 4. [Demonstration](#Demonstration)
 5. [Installation](#Installation)
